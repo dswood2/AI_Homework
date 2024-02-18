@@ -132,7 +132,7 @@ def breadthFirstSearch(problem: SearchProblem):
         if problem.isGoalState(current_state):
             return actions
 
-        visited.add(start_state)
+        visited.add(current_state)
 
         # Get successors and enqueue unvisited ones
         successors = problem.getSuccessors(current_state)
