@@ -6,26 +6,48 @@
 
 Answer the supplemental questions here! Make sure you follow the format if it is asked
 Q1#######################
-QS1.1: 
+QS1.1) computeActionFromValues(state)
 
-QS1.2:
+We initially create condition where if the state is terminal we immidiately return None. Afterwards we import the possible actions that can be taken from the state we are in and use a for loop to check every action using q value as a measuring tool to choose the bect action with the highest q value. The ties are broken down by whichever action with given q value has been first to appear.
 
-Q3#######################
+QS1.2) computeQValueFromValues(state, action)
 
-QS3.1: 
-Q5#######################
+To compute Q value we retieve possible trransition states and their probabilities and using a for  loop go from all states and apply the rewards and discounts as well as probabilities of achieving them to create a q value for the state.
 
-QS5.1:
 
-QS5.2 [optional]:
+QS3.1:Explain the reason you picked these values to achieve a desired policy. (i.e., you may give us a counter example)
+Prefer the close exit (+1), risking the cliff (-10)
 
-Q6#######################
-QS6.1:
-QS6.2 [optional]:
+To make sure that the token would risk the cliff we make a very low level of noise so that the chances of accidentaly hitting the cliff are low and the discount is very low as well to faster deminish the value of the further exit and we also make a high living reward to further motivate it to move to the closer exit.
 
+Prefer the close exit (+1), but avoiding the cliff (-10)
+
+To make sure that the token wouldn't risk the cliff we make a higher level of noise so that the chances of accidentaly hitting the cliff are higher and the discount is very low as well to faster deminish the value of the further exit and we also make a high living reward to further motivate it to move to the closer exit.
+
+Prefer the distant exit (+10), risking the cliff (-10)
+
+To make sure that the token would risk the cliff we make a very low level of noise so that the chances of accidentaly hitting the cliff are low and the discount is very high  to not deminish the value of the further exit and we also make a low living reward to further motivate it to move to the further exit.
+
+
+Prefer the distant exit (+10), avoiding the cliff (-10)
+
+To make sure that the token would risk the cliff we make a very higher level of noise so that the chances of accidentaly hitting the cliff are high and the discount is very high to not deminish the value of the further exit and we also make a low living reward to further motivate it to move to the further exit.
+
+Avoid both exits and the cliff (so an episode should never terminate)
+
+By making the living reward 1 we make sure that it is more benefitial for the agent to not stop existing rather then to exit throug one of the exits.
+
+QS 5.1) We use functions which create, calculate and update the values associated with actions. A state would be given a choice among the legally available actions and then choose the action with the best q value and update the states value accordingly. Slowly by running the process we get more and more accurate values which improve the performance of the agent.
+
+QS 5.2) If we look at the result with no noise in the picture called no-noise and compare it with the picture called with-noise where there was a noise of 0.2 we can see that the values have changed in places where the noise affected the action taken, but it didn't affect the parts where the noise didn't activate.
+QS 6.1)
+It does. In the picture called small epsilon we can see that the agent mostly took the road that was motivated by the highest q value but the agent in a case with high epsilon value explored the whole map and many different possibilities. It can be seen in the picture called big-epsilon. 
+QS 6.2)
+https://drive.google.com/file/d/1YCqZZ_YTDV8ICvMdVweUSwbM7lQoYWu4/view?usp=sharing
 
 Q7#######################
 QS7.1
+the result is in analysis.py
 
 
 
