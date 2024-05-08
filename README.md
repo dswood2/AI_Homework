@@ -4,12 +4,12 @@ Welcome to the Pac-Man Projects repository! This collection of projects that use
 
 ## Table of Contents
 
-- [Project Overview](#project-overview)
-  - [Project 0: Warmup and Autograder turtorial](#Project0)
-  - [Project 1: Search](#project1)
-  - [Project 2: Adversarial Search](#project2)
-  - [Project 3: MDP and Reinforcement Learning](#project3)
-  - [Project 4: GhostBuster](#project4)
+- Project Overview
+  - Project 0: Warmup and Autograder turtorial
+  - Project 1: Search
+  - Project 2: Adversarial Search
+  - Project 3: MDP and Reinforcement Learning
+  - Project 4: GhostBuster
 
 ## Introduction
 
